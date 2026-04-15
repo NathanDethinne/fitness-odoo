@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fitness_workout,access_fitness_workout,model_fitness_workout,base.group_user,1,1,1,1
+access_fitness_exercise,access_fitness_exercise,model_fitness_exercise,base.group_user,1,1,1,1
+access_fitness_set,access_fitness_set,model_fitness_set,base.group_user,1,1,1,1

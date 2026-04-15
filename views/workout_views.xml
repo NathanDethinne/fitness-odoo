@@ -1,0 +1,60 @@
+<odoo>
+    <record id="view_workout_form" model="ir.ui.view">
+        <field name="name">fitness.workout.form</field>
+        <field name="model">fitness.workout</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="exercise_ids"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_workouts" model="ir.actions.act_window">
+        <field name="name">Workouts</field>
+        <field name="res_model">fitness.workout</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_workout_form"/>
+    </record>
+
+    <menuitem id="menu_fitness_root" name="FitnessApp"/>
+    <menuitem id="menu_workouts" name="Workouts" parent="menu_fitness_root" action="action_workouts"/>
+
+    <record id="view_exercise_form" model="ir.ui.view">
+        <field name="name">fitness.exercise.form</field>
+        <field name="model">fitness.exercise</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="muscle_group"/>
+                    <field name="workout_id"/>
+                </group>
+                <group>
+                    <field name="set_ids">
+                        <list editable="bottom">
+                            <field name="reps"/>
+                            <field name="weight"/>
+                        </list>
+                    </field>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_sets_form" model="ir.ui.view">
+        <field name="name">fitness.sets.form</field>
+        <field name="model">fitness.set</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="reps"/>
+                    <field name="weight"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>
+
+<!-- -->
