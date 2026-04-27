@@ -6,7 +6,9 @@
             <form>
                 <field name="name"/>
                 <field name="date"/>
-                <field name="exercise_ids"/>
+                <field name="exercise_ids">
+                    <field name="exercise_id"/>
+                </field>
             </form>
         </field>
     </record>
@@ -14,8 +16,7 @@
     <record id="action_workouts" model="ir.actions.act_window">
         <field name="name">Workouts</field>
         <field name="res_model">fitness.workout</field>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="view_workout_form"/>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="menu_fitness_root" name="FitnessApp"/>
@@ -26,11 +27,8 @@
         <field name="model">fitness.exercise</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <field name="name"/>
-                    <field name="muscle_group"/>
-                    <field name="workout_id"/>
-                </group>
+                <field name="workout_id" readonly="1"/>
+                <field name="exercise_id"/>
                 <group>
                     <field name="set_ids">
                         <list editable="bottom">

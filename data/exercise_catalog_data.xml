@@ -1,0 +1,22 @@
+<odoo>
+    <data noupdate="1">
+        <record id="exercise_bench_press" model="fitness.catalog">
+            <field name="name">Bench Press</field>
+            <field name="muscle_group">Chest</field>
+            <field name="equipment">Barbell</field>
+            <field name="description">Shoulder flexion and adduction on a bench with a barbell</field>
+        </record>
+        <record id="exercise_squat" model="fitness.catalog">
+            <field name="name">Squat</field>
+            <field name="muscle_group">Quadriceps</field>
+            <field name="equipment">Barbell</field>
+            <field name="description">Hip, knee and ankle flexion with a barbell</field>
+        </record>
+        <record id="exercise_rows" model="fitness.catalog">
+            <field name="name">Rows</field>
+            <field name="muscle_group">Trapezius</field>
+            <field name="equipment">Barbell</field>
+            <field name="description">Scapular retraction and elbow flexion with a barbell</field>
+        </record>
+    </data>
+</odoo>
