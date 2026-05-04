@@ -1,5 +1,5 @@
 <odoo>
-    <data noupdate="1">
+    <data>
         <record id="exercise_bench_press" model="fitness.catalog">
             <field name="name">Bench Press</field>
             <field name="muscle_group">Chest</field>
@@ -14,9 +14,33 @@
         </record>
         <record id="exercise_rows" model="fitness.catalog">
             <field name="name">Rows</field>
-            <field name="muscle_group">Trapezius</field>
+            <field name="muscle_group">Traps</field>
             <field name="equipment">Barbell</field>
             <field name="description">Scapular retraction and elbow flexion with a barbell</field>
+        </record>
+        <record id="exercise_pulldown" model="fitness.catalog">
+            <field name="name">Pulldown</field>
+            <field name="muscle_group">Lats</field>
+            <field name="equipment">Cable</field>
+            <field name="description">Shoulder extension and elbow flexion with a large straight handle</field>
+        </record>
+        <record id="exercise_preacher_curl" model="fitness.catalog">
+            <field name="name">Preacher Curl</field>
+            <field name="muscle_group">Biceps</field>
+            <field name="equipment">Cable</field>
+            <field name="description">Elbow flexion on an incline bench with a cable</field>
+        </record>
+        <record id="exercise_cable_skullcrushers" model="fitness.catalog">
+            <field name="name">Cable Skullcrushers</field>
+            <field name="muscle_group">Triceps</field>
+            <field name="equipment">Cable</field>
+            <field name="description">Elbow extension lying down on a bench with a cable overhead</field>
+        </record>
+        <record id="exercise_hip_thrust" model="fitness.catalog">
+            <field name="name">Hip Thrust</field>
+            <field name="muscle_group">Glutes</field>
+            <field name="equipment">Barbell</field>
+            <field name="description">Hip extension with a barbell on a bench</field>
         </record>
     </data>
 </odoo>

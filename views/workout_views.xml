@@ -7,7 +7,9 @@
                 <field name="name"/>
                 <field name="date"/>
                 <field name="exercise_ids">
-                    <field name="exercise_id"/>
+                    <list editable="bottom" open_form_view="1">
+                        <field name="exercise_id"/>
+                    </list>
                 </field>
             </form>
         </field>
