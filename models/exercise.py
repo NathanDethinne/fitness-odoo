@@ -20,7 +20,7 @@ class Exercise(models.Model):
         string="Sets"
     )
 
-    #exercise_volume = fields.Float(compute='_compute_exercise_volume', store=True)
+     #exercise_volume = fields.Float(compute='_compute_exercise_volume', store=True)
     #@api.depends('set_ids.reps', 'set_ids.weight')
     #def _compute_exercise_volume(self):
         #for record in self:
