@@ -8,7 +8,7 @@
                 <field name="date"/>
                 <field name="exercise_ids">
                     <list editable="bottom" open_form_view="1">
-                        <field name="exercise_id"/>
+                        <field name="catalog_id"/>
                     </list>
                 </field>
             </form>
@@ -30,7 +30,7 @@
         <field name="arch" type="xml">
             <form>
                 <field name="workout_id" readonly="1"/>
-                <field name="exercise_id"/>
+                <field name="catalog_id"/>
                 <group>
                     <field name="set_ids">
                         <list editable="bottom">

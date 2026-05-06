@@ -1,34 +1,34 @@
 <odoo>
     <data>
-        <record id="exercise_bench_press" model="fitness.catalog">
+        <record id="exercise_barbell_bench_press" model="fitness.catalog">
             <field name="name">Bench Press</field>
             <field name="muscle_group">Chest</field>
             <field name="equipment">Barbell</field>
-            <field name="description">Shoulder flexion and adduction on a bench with a barbell</field>
+            <field name="description">Shoulder flexion and adduction with a barbell on a bench</field>
         </record>
-        <record id="exercise_squat" model="fitness.catalog">
+        <record id="exercise_smith_machine_squat" model="fitness.catalog">
             <field name="name">Squat</field>
             <field name="muscle_group">Quadriceps</field>
-            <field name="equipment">Barbell</field>
-            <field name="description">Hip, knee and ankle flexion with a barbell</field>
+            <field name="equipment">Smith Machine</field>
+            <field name="description">Hip, knee and ankle flexion on a smith machine</field>
         </record>
-        <record id="exercise_rows" model="fitness.catalog">
+        <record id="exercise_dumbbell_rows" model="fitness.catalog">
             <field name="name">Rows</field>
             <field name="muscle_group">Traps</field>
-            <field name="equipment">Barbell</field>
-            <field name="description">Scapular retraction and elbow flexion with a barbell</field>
+            <field name="equipment">Dumbbell</field>
+            <field name="description">Scapular retraction and elbow flexion with dumbbells</field>
         </record>
-        <record id="exercise_pulldown" model="fitness.catalog">
-            <field name="name">Pulldown</field>
+        <record id="exercise_plate_loaded_lat_pulldown" model="fitness.catalog">
+            <field name="name">Plate Loaded Lat Pulldown</field>
             <field name="muscle_group">Lats</field>
-            <field name="equipment">Cable</field>
-            <field name="description">Shoulder extension and elbow flexion with a large straight handle</field>
+            <field name="equipment">Plate Loaded Machine</field>
+            <field name="description">Shoulder extension and elbow flexion on a plate loaded machine</field>
         </record>
-        <record id="exercise_preacher_curl" model="fitness.catalog">
+        <record id="exercise_machine_preacher_curl" model="fitness.catalog">
             <field name="name">Preacher Curl</field>
             <field name="muscle_group">Biceps</field>
-            <field name="equipment">Cable</field>
-            <field name="description">Elbow flexion on an incline bench with a cable</field>
+            <field name="equipment">Machine</field>
+            <field name="description">Elbow flexion on a machine</field>
         </record>
         <record id="exercise_cable_skullcrushers" model="fitness.catalog">
             <field name="name">Cable Skullcrushers</field>
@@ -40,7 +40,7 @@
             <field name="name">Hip Thrust</field>
             <field name="muscle_group">Glutes</field>
             <field name="equipment">Barbell</field>
-            <field name="description">Hip extension with a barbell on a bench</field>
+            <field name="description">Hip extension using a barbell upper back on a bench</field>
         </record>
     </data>
 </odoo>

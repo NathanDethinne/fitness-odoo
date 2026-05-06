@@ -9,7 +9,7 @@ class Exercise(models.Model):
         string="Workout"
     )
 
-    exercise_id = fields.Many2one(
+    catalog_id = fields.Many2one(
         comodel_name="fitness.catalog",
         string="Catalog"
     )
