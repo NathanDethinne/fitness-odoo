@@ -14,7 +14,7 @@ class Set(models.Model):
     
     @api.onchange('exercise_id')
     def progressive_overload(self):
-        exercise_records = self.env['fitness.exercise'].search([('id', '<', self.exercise_id.id),('catalog_id', '=', self.exercise_id.catalog_id.id)], order='id desc', limit=1)
+        exercise_records = self.env['fitness.exercise'].search([('id', '<', self.exercise_id._origin.id),('catalog_id', '=', self.exercise_id._origin.catalog_id.id)], order='id desc', limit=1)
         #searches for the last exercise performances, not the current ones
         first_set = self.env['fitness.set'].search([('exercise_id', '=', exercise_records.id)], order='id asc', limit=1)
         #searches for the first set
@@ -33,4 +33,4 @@ class Set(models.Model):
             else:
                 self.weight = first_set.weight
         else:
-            return ""
+            return

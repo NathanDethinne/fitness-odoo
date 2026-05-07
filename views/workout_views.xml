@@ -1,4 +1,15 @@
 <odoo>
+    <record id="view_workout_list" model="ir.ui.view">
+        <field name="name">fitness.workout.list</field>
+        <field name="model">fitness.workout</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="date"/>
+            </list>
+        </field>
+    </record>
+
     <record id="view_workout_form" model="ir.ui.view">
         <field name="name">fitness.workout.form</field>
         <field name="model">fitness.workout</field>
