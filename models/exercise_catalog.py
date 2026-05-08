@@ -3,6 +3,7 @@ from odoo import models, fields
 class Catalog(models.Model):
     _name = "fitness.catalog"
     _description = "Catalog"
+    _order = "name asc"
 
     name = fields.Char(string="Exercise Name", required=True)
     muscle_group = fields.Char(string="Muscle Group")
