@@ -6,6 +6,7 @@
             <list>
                 <field name="name"/>
                 <field name="date"/>
+                <field name="workout_volume"/>
             </list>
         </field>
     </record>
@@ -22,6 +23,7 @@
                         <field name="catalog_id"/>
                     </list>
                 </field>
+                <field name="workout_volume"/>
             </form>
         </field>
     </record>
@@ -68,6 +70,7 @@
                         </list>
                     </field>
                 </group>
+                <field name="exercise_volume"/>
             </form>
         </field>
     </record>
