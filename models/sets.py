@@ -34,3 +34,9 @@ class Set(models.Model):
                 self.weight = first_set.weight
         else:
             return
+        
+    workout_date = fields.Date(
+        string='Workout Date',
+        related='exercise_id.workout_id.date',
+        readonly=True
+    )
