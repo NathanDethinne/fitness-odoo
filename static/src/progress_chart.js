@@ -16,8 +16,8 @@ class MyProgress extends Component {
         const records = await this.orm.searchRead(
             "fitness.set",
             [["exercise_id", "=", this.state.selectedExerciseId]],
-            ["weight", "workout_date"],
-            {order: "workout_date asc"}
+            ["weight", "set_date"],
+            {order: "set_date asc"}
         );
         this.state.chartData = records;
     }

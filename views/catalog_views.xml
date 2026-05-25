@@ -1,0 +1,17 @@
+<odoo>
+    <record id="view_exercise_catalog_list" model="ir.ui.view">
+        <field name="name">fitness.exercise_catalog.list</field>
+        <field name="model">fitness.catalog</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_exercise_catalog" model="ir.actions.act_window">
+        <field name="name">Catalog</field>
+        <field name="res_model">fitness.catalog</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

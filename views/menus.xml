@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="menu_fitness_root" name="FitnessApp"/>
+    <menuitem id="menu_workouts" name="Workouts" parent="menu_fitness_root" action="action_workouts"/>
+
+    <menuitem id="menu_exercise_catalog" name="Catalog" parent="menu_fitness_root" action="action_exercise_catalog"/>
+</odoo>

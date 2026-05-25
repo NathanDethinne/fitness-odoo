@@ -10,12 +10,18 @@ class Set(models.Model):
     exercise_id = fields.Many2one(
         comodel_name="fitness.exercise",
         string="Exercise"
-        )
+    )
     
     @api.onchange('exercise_id')
     def progressive_overload(self):
-        exercise_records = self.env['fitness.exercise'].search([('id', '<', self.exercise_id._origin.id),('catalog_id', '=', self.exercise_id._origin.catalog_id.id)], order='id desc', limit=1)
+        exercise_records = self.env['fitness.exercise'].search([
+            ('exercise_date', '<', self.exercise_id._origin.exercise_date),
+            ('catalog_id', '=', self.exercise_id._origin.catalog_id.id)],
+            order='exercise_date desc',
+            limit=1)
         #searches for the last exercise performances, not the current ones
+        if not exercise_records:
+            return
         first_set = self.env['fitness.set'].search([('exercise_id', '=', exercise_records.id)], order='id asc', limit=1)
         #searches for the first set
         if first_set.exists():
@@ -32,11 +38,10 @@ class Set(models.Model):
                         self.weight = first_set.weight + 2
             else:
                 self.weight = first_set.weight
-        else:
-            return
         
-    workout_date = fields.Date(
-        string='Workout Date',
+    set_date = fields.Date(
+        string='Set Date',
         related='exercise_id.workout_id.date',
         readonly=True
     )
+    #simplifies OWL query

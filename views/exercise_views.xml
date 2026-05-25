@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_exercise_form" model="ir.ui.view">
+        <field name="name">fitness.exercise.form</field>
+        <field name="model">fitness.exercise</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="workout_id" readonly="1"/>
+                </group>
+                <group>
+                    <field name="catalog_id"/>
+                </group>
+                <group>
+                    <field name="set_ids">
+                        <list editable="bottom">
+                            <field name="reps"/>
+                            <field name="weight"/>
+                        </list>
+                    </field>
+                </group>
+                <group>
+                    <field name="exercise_volume"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

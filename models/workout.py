@@ -18,7 +18,7 @@ class Workout(models.Model):
     def _compute_workout_volume(self):
         for record in self:
             total = 0    
-            for s in record.exercise_ids:
-                total += (s.exercise_volume or 0)
+            for exercise in record.exercise_ids:
+                total += (exercise.exercise_volume or 0)
             record.workout_volume = total
 #

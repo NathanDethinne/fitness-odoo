@@ -16,14 +16,18 @@
         <field name="model">fitness.workout</field>
         <field name="arch" type="xml">
             <form>
-                <field name="name"/>
-                <field name="date"/>
-                <field name="exercise_ids">
-                    <list editable="bottom" open_form_view="1">
-                        <field name="catalog_id"/>
-                    </list>
-                </field>
-                <field name="workout_volume"/>
+                <group>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="exercise_ids" nolabel="1">
+                        <list editable="bottom" open_form_view="1">
+                            <field name="catalog_id" string=" "/>
+                        </list>
+                    </field>
+                </group>
+                <group>
+                    <field name="workout_volume"/>
+                </group>
             </form>
         </field>
     </record>
@@ -32,60 +36,6 @@
         <field name="name">Workouts</field>
         <field name="res_model">fitness.workout</field>
         <field name="view_mode">list,form</field>
-    </record>
-
-    <menuitem id="menu_fitness_root" name="FitnessApp"/>
-    <menuitem id="menu_workouts" name="Workouts" parent="menu_fitness_root" action="action_workouts"/>
-
-    <record id="view_exercise_catalog_list" model="ir.ui.view">
-        <field name="name">fitness.exercise_catalog.list</field>
-        <field name="model">fitness.catalog</field>
-        <field name="arch" type="xml">
-            <list>
-                <field name="name"/>
-            </list>
-        </field>
-    </record>
-
-    <record id="action_exercise_catalog" model="ir.actions.act_window">
-        <field name="name">Catalog</field>
-        <field name="res_model">fitness.catalog</field>
-        <field name="view_mode">list,form</field>
-    </record>
-
-    <menuitem id="menu_exercise_catalog" name="Catalog" parent="menu_fitness_root" action="action_exercise_catalog"/>
-
-    <record id="view_exercise_form" model="ir.ui.view">
-        <field name="name">fitness.exercise.form</field>
-        <field name="model">fitness.exercise</field>
-        <field name="arch" type="xml">
-            <form>
-                <field name="workout_id" readonly="1"/>
-                <field name="catalog_id"/>
-                <group>
-                    <field name="set_ids">
-                        <list editable="bottom">
-                            <field name="reps"/>
-                            <field name="weight"/>
-                        </list>
-                    </field>
-                </group>
-                <field name="exercise_volume"/>
-            </form>
-        </field>
-    </record>
-
-    <record id="view_sets_form" model="ir.ui.view">
-        <field name="name">fitness.sets.form</field>
-        <field name="model">fitness.set</field>
-        <field name="arch" type="xml">
-            <form>
-                <group>
-                    <field name="reps"/>
-                    <field name="weight"/>
-                </group>
-            </form>
-        </field>
     </record>
 </odoo>
 

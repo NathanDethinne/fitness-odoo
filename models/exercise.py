@@ -6,8 +6,11 @@ class Exercise(models.Model):
 
     workout_id = fields.Many2one(
         comodel_name="fitness.workout",
-        string="Workout"
+        string="Workout",
+        required=True,
+        ondelete='cascade'
     )
+    #ability to delete all exercises when workout deleted instead of error
 
     catalog_id = fields.Many2one(
         comodel_name="fitness.catalog",
@@ -20,11 +23,17 @@ class Exercise(models.Model):
         string="Sets"
     )
 
+    exercise_date = fields.Date(
+        related='workout_id.date',
+        store=True
+    )
+    #more efficient to let db order
+
     exercise_volume = fields.Float(compute='_compute_exercise_volume', store=True)
     @api.depends('set_ids.reps', 'set_ids.weight')
     def _compute_exercise_volume(self):
         for record in self:
             total = 0    
-            for s in record.set_ids:
-                total += (s.reps or 0) * (s.weight or 0)
+            for exercise in record.set_ids:
+                total += (exercise.reps or 0) * (exercise.weight or 0)
             record.exercise_volume = total
