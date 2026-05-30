@@ -9,8 +9,8 @@ class Exercise(models.Model):
         string="Workout",
         required=True,
         ondelete='cascade'
+        #ability to delete all exercises when workout deleted instead of error
     )
-    #ability to delete all exercises when workout deleted instead of error
 
     catalog_id = fields.Many2one(
         comodel_name="fitness.catalog",
@@ -34,6 +34,6 @@ class Exercise(models.Model):
     def _compute_exercise_volume(self):
         for record in self:
             total = 0    
-            for exercise in record.set_ids:
-                total += (exercise.reps or 0) * (exercise.weight or 0)
+            for set_record in record.set_ids:
+                total += (set_record.reps or 0) * (set_record.weight or 0)
             record.exercise_volume = total

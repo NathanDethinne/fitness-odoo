@@ -9,13 +9,18 @@ class Set(models.Model):
 
     exercise_id = fields.Many2one(
         comodel_name="fitness.exercise",
-        string="Exercise"
+        string="Exercise",
+        ondelete='cascade'
+        #consistency
     )
     
     @api.onchange('exercise_id')
-    def progressive_overload(self):
+    #for interactivity
+    def _onchange_exercise_id(self):
+    #convention
         exercise_records = self.env['fitness.exercise'].search([
             ('exercise_date', '<', self.exercise_id._origin.exercise_date),
+    #_origin to access the db
             ('catalog_id', '=', self.exercise_id._origin.catalog_id.id)],
             order='exercise_date desc',
             limit=1)
