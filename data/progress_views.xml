@@ -1,0 +1,6 @@
+<odoo>
+    <record id="display_progress" model="ir.actions.client">
+        <field name="name">Progress chart</field>
+        <field name="tag">display_progress</field>
+    </record>
+</odoo>

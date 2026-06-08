@@ -3,4 +3,6 @@
     <menuitem id="menu_workouts" name="Workouts" parent="menu_fitness_root" action="action_workouts"/>
 
     <menuitem id="menu_exercise_catalog" name="Catalog" parent="menu_fitness_root" action="action_exercise_catalog"/>
+
+    <menuitem id="menu_progress" name="Progress chart" parent="menu_fitness_root" action="display_progress"/>
 </odoo>

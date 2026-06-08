@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <templates>
+        <t t-name="fitness_app.my_progress" owl="1">
+            <div class="dropdown">
+                <select t-on-change="onSelectedExercise">
+                    <t t-foreach="state.catalog_list" t-as="exercise" t-key="exercise.id">
+                        <option t-att-value="exercise.id"><t t-esc="exercise.name"/></option>
+                    </t>
+                </select>
+                <canvas t-ref="Chart"/>
+            </div>
+        </t>
+    </templates>

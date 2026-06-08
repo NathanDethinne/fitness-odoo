@@ -7,7 +7,6 @@ class Exercise(models.Model):
     workout_id = fields.Many2one(
         comodel_name="fitness.workout",
         string="Workout",
-        required=True,
         ondelete='cascade'
         #ability to delete all exercises when workout deleted instead of error
     )
